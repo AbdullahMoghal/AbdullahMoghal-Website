@@ -172,11 +172,6 @@ const Navigation = () => {
         )}
       </div>
     </nav>
-
-    {/* Desktop Toggle Button - Only show on desktop, positioned outside nav */}
-    <div className="hidden lg:block fixed bottom-6 right-6 z-[60]">
-      <PortfolioToggle key={`desktop-toggle-${mode}`} />
-    </div>
     </>
   );
 };

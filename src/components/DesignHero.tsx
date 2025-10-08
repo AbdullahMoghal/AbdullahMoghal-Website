@@ -1,5 +1,7 @@
 import { Linkedin, Github, Instagram } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { usePortfolio } from "@/contexts/PortfolioContext";
+import PortfolioToggle from "./PortfolioToggle";
 
 const DesignHero = () => {
   const navigate = useNavigate();
@@ -56,10 +58,7 @@ const DesignHero = () => {
                   <div className="mt-0 mb-4">
                     <div className="w-32 h-1 bg-white rounded-full mx-auto"></div>
                   </div>
-                  <p className="text-base md:text-lg text-gray-300 font-semibold leading-tight mb-4">
-                    Design Portfolio
-                  </p>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 items-center">
                     <a href="https://linkedin.com/in/abdullahmoghal" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white flex items-center justify-center text-white font-bold text-sm hover:bg-white hover:text-black transition-all cursor-pointer">
                       <Linkedin className="w-6 h-6" />
                     </a>
@@ -69,6 +68,7 @@ const DesignHero = () => {
                     <a href="https://instagram.com/itsmoghal" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white flex items-center justify-center text-white font-bold text-sm hover:bg-white hover:text-black transition-all cursor-pointer">
                       <Instagram className="w-6 h-6" />
                     </a>
+                    <PortfolioToggle />
                   </div>
                 </div>
           </div>

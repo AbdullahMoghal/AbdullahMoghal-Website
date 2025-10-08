@@ -1,5 +1,7 @@
 import profileImage from "@/assets/profile.png";
 import { Linkedin, Github } from "lucide-react";
+import { usePortfolio } from "@/contexts/PortfolioContext";
+import PortfolioToggle from "./PortfolioToggle";
 
 const Hero = () => {
   const scrollToExperience = () => {
@@ -39,13 +41,14 @@ const Hero = () => {
             </p>
 
             {/* Social media icons - Only LinkedIn and GitHub */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <a href="https://linkedin.com/in/abdullah-moghal" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-black flex items-center justify-center text-black font-bold text-sm hover:bg-black hover:text-white transition-all cursor-pointer">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="https://github.com/abdullah-moghal" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-black flex items-center justify-center text-black font-bold text-sm hover:bg-black hover:text-white transition-all cursor-pointer">
                 <Github className="w-6 h-6" />
               </a>
+              <PortfolioToggle />
             </div>
 
             {/* Stats */}
