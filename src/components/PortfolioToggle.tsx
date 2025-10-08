@@ -12,14 +12,6 @@ const PortfolioToggle = () => {
           ? 'border-accent text-accent hover:bg-accent hover:text-white shadow-accent/25 hover:shadow-accent/40' 
           : 'border-white text-white hover:bg-white hover:text-black shadow-white/25 hover:shadow-white/40'
       }`}
-      style={{
-        backgroundImage: mode === 'normal' 
-          ? 'url(/path/to/your-design-mode.gif)' 
-          : 'url(/path/to/your-portfolio-mode.gif)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
           {mode === 'normal' ? (
             <>

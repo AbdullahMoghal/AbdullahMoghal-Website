@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePortfolio } from "@/contexts/PortfolioContext";
 import PortfolioToggle from "./PortfolioToggle";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,13 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
+  // Close mobile menu when mode changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [mode]);
+
   return (
+    <>
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
       mode === 'design' 
         ? 'bg-black/30 text-white' 
@@ -92,7 +98,6 @@ const Navigation = () => {
                 </button>
               </>
             )}
-            <PortfolioToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -161,22 +166,18 @@ const Navigation = () => {
               </>
             )}
             <div className="pt-4">
-              <PortfolioToggle />
+              <PortfolioToggle key="mobile-toggle" />
             </div>
           </div>
         )}
       </div>
-
-      {/* Floating toggle (only in normal mode) */}
-      {mode === 'normal' && (
-        <button
-          onClick={toggleMode}
-          className="fixed bottom-6 right-6 z-[60] px-4 py-2 rounded-full border border-accent text-accent bg-white/80 backdrop-blur hover:bg-accent hover:text-white transition-colors shadow-md md:hidden"
-        >
-          Design Mode
-        </button>
-      )}
     </nav>
+
+    {/* Desktop Toggle Button - Only show on desktop, positioned outside nav */}
+    <div className="hidden lg:block fixed bottom-6 right-6 z-[60]">
+      <PortfolioToggle key={`desktop-toggle-${mode}`} />
+    </div>
+    </>
   );
 };
 
