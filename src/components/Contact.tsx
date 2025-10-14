@@ -154,7 +154,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-black mb-4">Documents</h4>
               <div className="flex flex-col gap-3">
                 <a
-                  href="/pdf-redirects/Resume.pdf"
+                  href="/pdf-redirects/Resume-10-14-2025.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group"

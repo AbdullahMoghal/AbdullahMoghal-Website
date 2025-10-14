@@ -40,7 +40,7 @@ const Footer = () => {
             {/* PDF Documents */}
             <div className="flex gap-4">
               <a 
-                href="/pdf-redirects/Resume.pdf"
+                href="/pdf-redirects/Resume-10-14-2025.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 hover:bg-white text-white hover:text-black rounded-full transition-all hover:scale-110"
