@@ -1,4 +1,4 @@
-import { Building2, Briefcase, Monitor, HardDrive, Film, Image, GraduationCap, Code, Database, Brain } from "lucide-react";
+import { Building2, Briefcase, Monitor, HardDrive, Film, Image, GraduationCap, Code, Database, Brain, Globe } from "lucide-react";
 
 const skills = [
   {
@@ -36,6 +36,14 @@ const experiences = [
     description: "Representing the College of Business and assisting with student engagement initiatives and campus events."
   },
   {
+    icon: Code,
+    date: "Jan 2025 - Present",
+    title: "Muslim Student Association - Web Developer",
+    company: "The University of Texas at Arlington",
+    description: "Developed and deployed a user-friendly platform featuring event scheduling, donation systems, and membership registration that increased accessibility and engagement for 200+ students and community members.",
+    noIcon: true
+  },
+  {
     icon: Briefcase,
     date: "Jun 2025 - Aug 2025",
     title: "IT Business Systems Intern",
@@ -62,13 +70,6 @@ const experiences = [
     title: "Research Intern",
     company: "Al-Pin",
     description: "Conducted cutting-edge AI research and development, focusing on machine learning applications and model evaluation."
-  },
-  {
-    icon: Image,
-    date: "Mar 2024 - May 2024",
-    title: "Prompt Engineer I",
-    company: "Outlier",
-    description: "Specialized in prompt engineering and AI model optimization for various applications and use cases."
   },
   {
     icon: Building2,
@@ -158,10 +159,14 @@ const Experience = () => {
                   const IconComponent = exp.icon;
                   return (
                     <div key={index} className="relative flex items-start">
-                      {/* Timeline dot */}
-                      <div className="relative z-10 flex-shrink-0 w-12 h-12 bg-accent rounded-full border-2 border-white shadow-md flex items-center justify-center">
-                        <IconComponent className="w-5 h-5 text-white" />
-                      </div>
+                      {/* Timeline dot - hidden if noIcon flag is set */}
+                      {exp.noIcon ? (
+                        <div className="relative z-10 flex-shrink-0 w-12 h-12 flex items-center justify-center"></div>
+                      ) : (
+                        <div className="relative z-10 flex-shrink-0 w-12 h-12 bg-accent rounded-full border-2 border-white shadow-md flex items-center justify-center">
+                          <IconComponent className="w-5 h-5 text-white" />
+                        </div>
+                      )}
                       
                       {/* Content */}
                       <div className="ml-6 flex-1">
