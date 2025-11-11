@@ -29,6 +29,13 @@ const skills = [
 
 const experiences = [
   {
+    icon: Database,
+    date: "Nov 2025 - Present",
+    title: "Data Analytics & Insights",
+    company: "FaZe Clan",
+    description: "Leading analytics for creator and esports initiatives by consolidating fan engagement, social sentiment, and campaign performance data into actionable dashboards that guide marketing and partnership strategy."
+  },
+  {
     icon: Building2,
     date: "Sep 2025 - Present",
     title: "Student Assistant - College of Business Ambassador",
@@ -56,13 +63,6 @@ const experiences = [
     title: "Data Research Intern",
     company: "TLT - Tomorrow's Leaders Today, Inc",
     description: "Analyzed complex datasets to drive business insights and improve operational efficiency through data-driven decision making."
-  },
-  {
-    icon: HardDrive,
-    date: "Sep 2024 - Jan 2025",
-    title: "Teaching Assistant",
-    company: "American Leadership Academy",
-    description: "Supported educational programs and assisted with curriculum development and student mentoring."
   },
   {
     icon: Film,
