@@ -241,7 +241,10 @@ Our team acted as innovation consultants for Pulse, a Dallas–Fort Worth bevera
 Calmē redefines what "energy" means by combining 50 mg natural caffeine with L-theanine and B-vitamins to deliver sustained focus without the crash. Inspired by Liquid Death's counter-culture branding, Calmē features minimalist design with the message "Focus, without the crash" and a tone of mindful rebellion. The brand positions itself as authenticity over performance, calm energy over constant grind.
 
 Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food Institute (2025), showing increased spending on cognitive and wellness-oriented beverages. Calmē represents a strategic pivot from performance-driven energy to mindful, sustained focus—addressing both functional needs and cultural values of a generation seeking balance in an overstimulated world.`,
-    pdfUrl: "/pdf-redirects/Calmē_ Mindful Energy for a Burnt-Out Generation MMIS Submission.pdf",
+    pdfUrl: "/pdf-redirects/MMIS Submission.pdf",
+    presentationUrl: "/pdf-redirects/Calmē - Presentation (Maverick Marketing Intelligence Competition 2025) (1).pdf",
+    bannerImage: "/calme/1.png",
+    images: ["/calme/11.png"],
     date: "2024",
     topics: ["Marketing Strategy", "Consumer Research", "Brand Innovation"],
     type: "paper",
@@ -250,7 +253,8 @@ Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food 
     keywords: ["Functional Beverages", "Gen Z Marketing", "Brand Strategy", "Consumer Research", "Market Innovation"],
     problem: "The functional beverage market is saturated with brands promoting hyperactivity and constant motion, yet Gen Z audiences report record burnout and fatigue. While 77% of Gen Z consumes energy drinks, 38% experience crashes and 18% report jitters—revealing a disconnect between product offerings and genuine consumer needs. Traditional energy drinks deliver 'fake energy' that doesn't align with Gen Z's rejection of hustle culture and desire for calm focus and emotional balance.",
     solution: "Calmē redefines what 'energy' means by combining 50 mg natural caffeine with L-theanine and B-vitamins to deliver sustained focus without the crash. Inspired by Liquid Death's counter-culture branding, Calmē features minimalist design with the message 'Focus, without the crash' and positions itself as authenticity over performance, calm energy over constant grind. The brand addresses both functional needs and cultural values of a generation seeking balance.",
-    impact: "Calmē represents a strategic pivot from performance-driven energy to mindful, sustained focus. Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food Institute (2025), showing increased spending on cognitive and wellness-oriented beverages. The concept addresses the cultural shift away from hustle culture, offering Gen Z a beverage that aligns with their values of authenticity, balance, and genuine wellness—transforming the functional beverage category from hyperactive performance to mindful energy."
+    impact: "Calmē represents a strategic pivot from performance-driven energy to mindful, sustained focus. Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food Institute (2025), showing increased spending on cognitive and wellness-oriented beverages. The concept addresses the cultural shift away from hustle culture, offering Gen Z a beverage that aligns with their values of authenticity, balance, and genuine wellness—transforming the functional beverage category from hyperactive performance to mindful energy.",
+    award: "🥉 Bronze Winner - Maverick Marketing Intelligence Competition 2025"
   }
 };
 
@@ -281,6 +285,10 @@ const ProjectDetail = () => {
     );
   }
 
+  const isPaper = 'type' in project && project.type === "paper";
+  const hasBannerImage = isPaper && 'bannerImage' in project && project.bannerImage;
+  const showPaperHeroImage = projectId === "paper-2" && hasBannerImage;
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -302,8 +310,8 @@ const ProjectDetail = () => {
             Back to Portfolio
           </button>
           
-          <div className={`flex flex-col ${'type' in project && project.type === "paper" ? '' : 'lg:flex-row'} items-center gap-12`}>
-            <div className={`${'type' in project && project.type === "paper" ? 'w-full' : 'lg:w-1/2'} text-center lg:text-left`}>
+          <div className={`flex flex-col ${(!isPaper || showPaperHeroImage) ? 'lg:flex-row' : ''} items-center ${showPaperHeroImage ? 'lg:items-start' : ''} gap-12`}>
+            <div className={`${showPaperHeroImage ? 'lg:w-1/2' : (!isPaper ? 'lg:w-1/2' : 'w-full')} text-center lg:text-left`}>
               <h1 className="text-5xl md:text-6xl font-black text-accent mb-4">
                 {project.title}
               </h1>
@@ -320,10 +328,11 @@ const ProjectDetail = () => {
               <p className="text-lg text-black leading-relaxed mb-8">
                 {project.description}
               </p>
+
               
                   {/* Project Stats */}
-                  {'type' in project && project.type === "paper" ? (
-                    <div className="mb-8">
+                  {isPaper ? (
+                    <div className="mt-8 mb-10 flex flex-wrap gap-4 justify-center lg:justify-start">
                       <a
                         href={'pdfUrl' in project ? project.pdfUrl : '#'}
                         target="_blank"
@@ -333,6 +342,17 @@ const ProjectDetail = () => {
                         <Download className="w-5 h-5" />
                         Download/View Paper
                       </a>
+                      {'presentationUrl' in project && project.presentationUrl && (
+                        <a
+                          href={project.presentationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-8 py-4 border border-accent text-accent rounded-lg hover:bg-accent/10 transition-colors font-semibold text-lg"
+                        >
+                          <Download className="w-5 h-5" />
+                          Download Presentation
+                        </a>
+                      )}
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -462,17 +482,24 @@ const ProjectDetail = () => {
                   )}
             </div>
             
-            {/* Project Image - Only for non-papers */}
-            {(!('type' in project) || project.type !== "paper") && (
-              <div className="lg:w-1/2 flex justify-center">
-                <div className="w-full max-w-lg">
+            {/* Project Image / Paper Banner */}
+            {(!isPaper || showPaperHeroImage) && (
+              <div className={`lg:w-1/2 flex justify-center ${showPaperHeroImage ? 'lg:justify-end lg:mt-2' : ''}`}>
+                <div className={`w-full ${showPaperHeroImage ? 'max-w-2xl' : 'max-w-lg'}`}>
                   <img 
-                    src={projectId === "opportune-ai" ? "/opportuneai-thumbnail.png" : 
-                         projectId === "msa-website" ? "/msa-website-thumbnail.png" : 
-                         projectId === "insight" ? "/Insight thumbnail.png" :
-                         "/nocturne-thumbnail.png"}
-                    alt={`${project.title} Project Thumbnail`}
-                    className="w-full h-auto object-contain rounded-2xl shadow-lg"
+                    src={
+                      isPaper
+                        ? ('bannerImage' in project && project.bannerImage ? project.bannerImage : "")
+                        : projectId === "opportune-ai"
+                        ? "/opportuneai-thumbnail.png"
+                        : projectId === "msa-website"
+                        ? "/msa-website-thumbnail.png"
+                        : projectId === "insight"
+                        ? "/Insight thumbnail.png"
+                        : "/nocturne-thumbnail.png"
+                    }
+                    alt={`${project.title} ${isPaper ? 'Hero Visual' : 'Project Thumbnail'}`}
+                    className={`w-full h-auto object-contain rounded-2xl shadow-lg ${isPaper ? 'bg-white' : ''}`}
                   />
                 </div>
               </div>
@@ -505,6 +532,33 @@ const ProjectDetail = () => {
                     Download Full Paper (PDF)
                   </a>
                 </div>
+              </section>
+            )}
+
+            {'type' in project && project.type === "paper" && 'images' in project && project.images && project.images.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-bold text-accent mb-6">Visual Highlights</h2>
+                {project.images.length === 1 ? (
+                  <div className="max-w-4xl mx-auto bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img
+                      src={project.images[0]}
+                      alt={`${project.title} Visual`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {project.images.map((image, index) => (
+                      <div key={index} className="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img
+                          src={image}
+                          alt={`${project.title} Visual ${index + 1}`}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             )}
 
@@ -679,6 +733,15 @@ const ProjectDetail = () => {
                       <p className="text-black font-medium">{'date' in project ? project.date : ''}</p>
                     </div>
                   </div>
+                  {'award' in project && project.award && (
+                    <div className="flex items-center gap-3">
+                      <Award className="w-5 h-5 text-accent" />
+                      <div>
+                        <p className="text-sm text-black/70">Recognition</p>
+                        <p className="text-black font-medium">{project.award}</p>
+                      </div>
+                    </div>
+                  )}
                   <div>
                     <p className="text-sm text-black/70 mb-2">Keywords</p>
                     <div className="flex flex-wrap gap-2">

@@ -31,7 +31,7 @@ const experiences = [
   {
     icon: Database,
     date: "Nov 2025 - Present",
-    title: "Data Analytics & Insights",
+    title: "Data Analytics & Insights Intern",
     company: "FaZe Clan",
     description: "Leading analytics for creator and esports initiatives by consolidating fan engagement, social sentiment, and campaign performance data into actionable dashboards that guide marketing and partnership strategy."
   },
