@@ -242,7 +242,7 @@ Calmē redefines what "energy" means by combining 50 mg natural caffeine with L-
 
 Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food Institute (2025), showing increased spending on cognitive and wellness-oriented beverages. Calmē represents a strategic pivot from performance-driven energy to mindful, sustained focus—addressing both functional needs and cultural values of a generation seeking balance in an overstimulated world.`,
     pdfUrl: "/pdf-redirects/MMIS Submission.pdf",
-    presentationUrl: "/pdf-redirects/Calmē - Presentation (Maverick Marketing Intelligence Competition 2025) (1).pdf",
+    presentationUrl: "/pdf-redirects/CalmePresentation.pdf",
     bannerImage: "/calme/1.png",
     images: ["/calme/11.png"],
     date: "2024",
