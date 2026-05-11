@@ -32,19 +32,19 @@ const experiences = [
     icon: Database,
     date: "Nov 2025 - Present",
     title: "Data Analytics & Insights Intern",
-    company: "FaZe Clan",
+    company: "HardScope",
     description: "Leading analytics for creator and esports initiatives by consolidating fan engagement, social sentiment, and campaign performance data into actionable dashboards that guide marketing and partnership strategy."
   },
   {
     icon: Building2,
-    date: "Sep 2025 - Present",
+    date: "Sep 2025 - May 2026",
     title: "Student Assistant - College of Business Ambassador",
     company: "The University of Texas at Arlington",
     description: "Representing the College of Business and assisting with student engagement initiatives and campus events."
   },
   {
     icon: Code,
-    date: "Jan 2025 - Present",
+    date: "Jan 2025 - May 2026",
     title: "Muslim Student Association - Web Developer",
     company: "The University of Texas at Arlington",
     description: "Developed and deployed a user-friendly platform featuring event scheduling, donation systems, and membership registration that increased accessibility and engagement for 200+ students and community members.",
@@ -92,7 +92,7 @@ const Experience = () => {
             <div className="w-32 h-1 bg-accent rounded-full"></div>
           </div>
           <p className="text-lg text-black leading-relaxed mb-12 max-w-4xl">
-            Hi! My name is Abdullah Moghal, a Senior Information Systems student at UT Arlington with experience in software engineering, AI, business/data analysis, and design. From developing scalable systems at Medline to applying AI research and building digital platforms, my work has centered on creating solutions that drive business growth, efficiency, and user engagement. I'm passionate about using front-end development and AI innovation to deliver technology that transforms organizations and elevates experiences.
+            Hi! My name is Abdullah Moghal. I graduated with a Bachelor of Science in Information Systems from UT Arlington and bring experience in software engineering, AI, business/data analysis, and design. From developing scalable systems at Medline to applying AI research and building digital platforms, my work has centered on creating solutions that drive business growth, efficiency, and user engagement. I'm passionate about using front-end development and AI innovation to deliver technology that transforms organizations and elevates experiences.
           </p>
           
           {/* Skills Section - Organized Categories */}

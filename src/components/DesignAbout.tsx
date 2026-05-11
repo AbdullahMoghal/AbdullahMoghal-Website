@@ -49,7 +49,7 @@ const DesignAbout = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-black mb-4">Creative Designer & Developer</h2>
               <p className="text-lg text-black/70 leading-relaxed">
-                I'm Abdullah Moghal, a Senior Information Systems student at UT Arlington with a passion for 
+                I'm Abdullah Moghal, an Information Systems graduate from UT Arlington with a passion for 
                 creative design and innovative technology. My work spans across graphic design, photography, 
                 and digital development, creating visual narratives that resonate with audiences.
               </p>

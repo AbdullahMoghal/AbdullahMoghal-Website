@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Users, Code, Award, Lightbulb, Target, ExternalLink, Github, Download, FileText, Globe } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Code, Award, Lightbulb, Target, ExternalLink, Github, Download, Globe } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -212,6 +212,96 @@ Real-time streaming updates via websockets for live dashboards. Advanced filters
     solution: "InsighT provides a single pane of glass that consolidates fragmented customer signals into a unified intelligence layer with geographic visualization, sentiment analysis, and AI-powered actionable opportunities.",
     impact: "Delivers a focused, production-ready experience that PMs can trust, transforming raw noise into prioritized, location-aware, actionable intelligence that helps teams make data-driven decisions faster."
   },
+  "sabeel": {
+    title: "Sabeel",
+    subtitle: "Refugee intake & service routing platform",
+    description: "Sabeel is an automated refugee intake and service routing platform that matches individuals to the most relevant local support using real-world data on needs, language, and availability.",
+    longDescription: `Sabeel streamlines how newcomers connect with help. The product guides people through a structured intake flow, captures constraints like language and urgency, and routes them toward services that are actually reachable—not just theoretically available.
+
+An interactive map layer (Leaflet) helps visualize where support exists relative to where people are, making it easier for both clients and coordinators to reason about access and capacity. Behind the scenes, Supabase provides authentication-friendly data access and a Postgres foundation for storing intake records and service metadata securely and consistently.
+
+The open-source repository documents the system architecture, data model, and design decisions for the HackMSA build.`,
+    images: [
+      "/sabeel-screenshots/screenshot-1.png",
+      "/sabeel-screenshots/screenshot-2.png",
+      "/sabeel-screenshots/screenshot-3.png",
+      "/sabeel-screenshots/screenshot-4.png",
+      "/sabeel-screenshots/screenshot-5.png"
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Leaflet", "react-leaflet"],
+    hackathon: "HackMSA — MSA service & innovation build",
+    duration: "2026",
+    team: ["Abdullah Moghal"],
+    features: [
+      "Guided intake flow to capture needs, language, and availability",
+      "Service routing that scores and matches individuals to relevant local support",
+      "Map-based discovery with Leaflet for geographic context",
+      "Supabase-backed persistence with SSR-friendly client patterns",
+      "Responsive UI built with Next.js App Router and Tailwind CSS",
+      "Deployed demo for end-to-end walkthroughs of intake → routing"
+    ],
+    challenges: [
+      "Modeling messy real-world constraints (language, hours, capacity) in a way that stays intuitive in the UI",
+      "Balancing map performance and clarity with varied datasets and zoom levels",
+      "Shipping a trustworthy data layer on a short hackathon timeline with Supabase RLS and schema discipline"
+    ],
+    accomplishments: [
+      "End-to-end platform from intake through routing with a live deployed demo",
+      "Integrated geographic visualization to complement text-based service matching",
+      "Full hackathon story, stack, and walkthrough on Devpost with a recorded demo video"
+    ],
+    problem: "People seeking resettlement support often face fragmented information: services exist, but matching the right program to a person's language, timing, and needs is slow, error-prone, and hard to navigate without local context.",
+    solution: "Sabeel automates structured intake and applies routing logic against real service metadata—surfacing the best-fit options and mapping where help is accessible so individuals and coordinators can act faster.",
+    impact: "Reduces friction between people in need and the organizations that can help by making matching transparent, repeatable, and grounded in availability and location—not generic lists of resources."
+  },
+  "warehouse-ops-workbench": {
+    title: "Warehouse Ops Workbench",
+    subtitle: "INSY 4325 — Exception & resolution workbench",
+    description: "A centralized warehouse operations system that helps teams report, track, and resolve inventory discrepancies in real time while enforcing accountability through audit logs and role-based workflows—from associate issue intake through supervisor review to admin master data.",
+    longDescription: `Warehouse Ops Workbench is the capstone delivery for INSY 4325 (Information Systems). The product mirrors how real distribution centers handle exceptions: tickets capture discrepancy context, priority is derived from business rules, and only authorized roles can approve inventory adjustments.
+
+Supervisors and ops managers work a review queue with assignment rules; every state transition writes an immutable audit entry. Dashboards and reports summarize ticket volume, patterns, and outcomes so leadership can spot systemic issues rather than one-off noise.
+
+The stack pairs a React + Vite SPA (Supabase Auth on the client, Axios to the API) with a Spring Boot 3 service that validates Supabase-issued JWTs and implements domain logic against Postgres hosted on Supabase. SQL migrations define the full schema and realistic seed data for demos and stakeholder walkthroughs.`,
+    images: [
+      "/warehouse-ops-screenshots/screenshot-1.png",
+      "/warehouse-ops-screenshots/screenshot-2.png",
+      "/warehouse-ops-screenshots/screenshot-3.png",
+      "/warehouse-ops-screenshots/screenshot-4.png",
+      "/warehouse-ops-screenshots/screenshot-5.png",
+      "/warehouse-ops-screenshots/screenshot-6.png",
+      "/warehouse-ops-screenshots/screenshot-7.png",
+      "/warehouse-ops-screenshots/screenshot-8.png",
+      "/warehouse-ops-screenshots/screenshot-9.png"
+    ],
+    technologies: ["React 18", "Vite 5", "JavaScript", "Spring Boot 3", "Java 21", "Spring Security", "Spring Data JPA", "Supabase Auth", "PostgreSQL", "Axios", "Recharts", "react-hook-form"],
+    course: "INSY 4325: Information Systems Capstone",
+    duration: "2026",
+    team: ["Abdullah Moghal"],
+    features: [
+      "Role-based access for associates, supervisors, ops managers, and admins",
+      "Issue reporting with automatic priority rules tied to ticket type and estimated value",
+      "Review queue with assignment, approvals, and guarded transitions for closed tickets",
+      "Operational dashboards with Recharts summaries and status distribution",
+      "Reports workspace with export-oriented views for leadership review",
+      "Immutable audit trail for every workflow action",
+      "Master data and user/role administration for admins",
+      "REST API secured with Supabase JWT validation on Spring Boot"
+    ],
+    challenges: [
+      "Aligning Spring Security with Supabase JWTs while keeping secrets off the client",
+      "Modeling ticket lifecycles so closed records stay immutable but remain auditable",
+      "Splitting deployment across Vercel (frontend), Railway (backend), and Supabase (data + auth) with consistent CORS and env configuration"
+    ],
+    accomplishments: [
+      "End-to-end capstone platform with seeded demo data spanning twelve realistic tickets",
+      "Production-style architecture diagram and documentation in the open-source repository",
+      "Final capstone report documenting requirements, design, and outcomes (PDF)"
+    ],
+    problem: "Warehouse teams often lose time when discrepancy handling lives in spreadsheets, email threads, and ad-hoc chats—making it hard to prove who approved an adjustment, why it happened, or which issues are aging.",
+    solution: "Warehouse Ops Workbench centralizes exception intake, enforces role-specific permissions, and pairs every decision with audit metadata so resolution paths are traceable from first report through closure.",
+    impact: "Gives operations and IT stakeholders a credible blueprint for accountable inventory exception management, suitable for demos, capstone review, and future hardening (storage attachments, notifications, pagination at scale)."
+  },
   "paper-1": {
     title: "CAST AI: AI-Powered Inventory Forecasting and Strategic Decision Support for SMEs",
     subtitle: "Research Paper",
@@ -255,6 +345,28 @@ Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food 
     solution: "Calmē redefines what 'energy' means by combining 50 mg natural caffeine with L-theanine and B-vitamins to deliver sustained focus without the crash. Inspired by Liquid Death's counter-culture branding, Calmē features minimalist design with the message 'Focus, without the crash' and positions itself as authenticity over performance, calm energy over constant grind. The brand addresses both functional needs and cultural values of a generation seeking balance.",
     impact: "Calmē represents a strategic pivot from performance-driven energy to mindful, sustained focus. Market opportunity is validated by McKinsey (2025), Mintel (2025), and The Food Institute (2025), showing increased spending on cognitive and wellness-oriented beverages. The concept addresses the cultural shift away from hustle culture, offering Gen Z a beverage that aligns with their values of authenticity, balance, and genuine wellness—transforming the functional beverage category from hyperactive performance to mindful energy.",
     award: "🥉 Bronze Winner - Maverick Marketing Intelligence Competition 2025"
+  },
+  "paper-3": {
+    title: "Warehouse Ops Workbench: Final Capstone Report",
+    subtitle: "Capstone report",
+    course: "INSY 4325: Information Systems Capstone",
+    description: "This report documents the Warehouse Ops Workbench capstone delivery: business context, requirements, system design, implementation choices, and outcomes for a centralized platform that helps warehouse teams report, review, resolve, and audit inventory discrepancies with accountability and role-based access control.",
+    longDescription: `The capstone addresses fragmented exception handling in distribution operations—where spreadsheets, email, and informal channels make it difficult to trace approvals, prioritize aging issues, or prove compliance. Warehouse Ops Workbench models a realistic workflow from associate issue intake through supervisor review, ops oversight, and administrative configuration.
+
+The report walks through the target domain, user roles, functional requirements, and non-functional considerations (security, auditability, deployment). It explains the chosen architecture: a React + Vite SPA using Supabase for authentication, a Java 21 Spring Boot 3 API secured with Supabase JWT validation, and PostgreSQL on Supabase with versioned SQL migrations and seed data for demonstration.
+
+It also summarizes key screens (reporting, review queue, ticket detail, dashboards, reports, master data, audit trail), business rules enforced in the service layer, and lessons learned integrating enterprise-style APIs with a modern auth provider. The companion open-source repository and live deployment support the narrative with runnable artifacts for reviewers.`,
+    pdfUrl: "/pdf-redirects/Warehouse_Ops_Final_Report.pdf",
+    date: "2026",
+    topics: ["Systems Design", "Operations & Workflow", "Full-Stack Architecture"],
+    type: "paper",
+    images: ["/warehouse-ops-thumbnail.png"],
+    abstract: "Warehouse operations teams need a single, trustworthy system for inventory exceptions—one that captures context at intake, routes work to the right role, prevents unauthorized adjustments, and leaves an immutable audit trail. This capstone report presents Warehouse Ops Workbench, an INSY 4325 full-stack solution that combines a React + Vite front end, Supabase Auth and Postgres, and a Spring Boot REST API with JWT validation. The document covers problem framing, requirements, architecture, data model highlights, role-based workflows, and deployment considerations, and points to the implemented system and final PDF for detailed specifications and evaluation.",
+    authors: ["Abdullah Moghal"],
+    keywords: ["Capstone", "Warehouse Operations", "Spring Boot", "React", "Supabase", "Audit Trail", "RBAC"],
+    problem: "Inventory discrepancies and operational exceptions are often tracked in disconnected tools, which slows resolution, obscures accountability, and makes it hard for supervisors and IT to enforce consistent business rules.",
+    solution: "The report describes Warehouse Ops Workbench—a structured ticketing and review platform with role-based permissions, dashboards, reporting views, master data administration, and audit logging backed by a documented API and database schema.",
+    impact: "The capstone package gives stakeholders a defensible record of analysis, design, and implementation suitable for academic review and as a foundation for future product hardening (notifications, attachments, pagination at scale)."
   }
 };
 
@@ -435,6 +547,66 @@ const ProjectDetail = () => {
                               <Github className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                             </a>
                           </>
+                        ) : projectId === "sabeel" ? (
+                          <>
+                            <a 
+                              href="https://sabeel-hack-msa.vercel.app" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="View Live Site"
+                            >
+                              <Globe className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a 
+                              href="https://devpost.com/software/sabeel" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="View on Devpost"
+                            >
+                              <ExternalLink className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a 
+                              href="https://github.com/AbdullahMoghal/sabeel-hack-msa" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="View on GitHub"
+                            >
+                              <Github className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                          </>
+                        ) : projectId === "warehouse-ops-workbench" ? (
+                          <>
+                            <a 
+                              href="https://ops-workbench-team-5.vercel.app" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="View Live Site"
+                            >
+                              <Globe className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a 
+                              href="https://github.com/AbdullahMoghal/ops-workbench-team-5" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="View on GitHub"
+                            >
+                              <Github className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a 
+                              href="/pdf-redirects/Warehouse_Ops_Final_Report.pdf" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors group"
+                              title="Final capstone report (PDF)"
+                            >
+                              <ExternalLink className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                            </a>
+                          </>
                         ) : (
                           <>
                             <a 
@@ -464,6 +636,8 @@ const ProjectDetail = () => {
                         {projectId === "opportune-ai" ? "Devpost & GitHub" : 
                          projectId === "msa-website" ? "Website & GitHub" : 
                          projectId === "insight" ? "Live Site, Devpost & GitHub" :
+                         projectId === "sabeel" ? "Live Site, Devpost & GitHub" :
+                         projectId === "warehouse-ops-workbench" ? "Live Site, GitHub & Final Report" :
                          "Chrome Store & GitHub"}
                       </p>
                     </div>
@@ -496,6 +670,10 @@ const ProjectDetail = () => {
                         ? "/msa-website-thumbnail.png"
                         : projectId === "insight"
                         ? "/Insight thumbnail.png"
+                        : projectId === "sabeel"
+                        ? "/sabeel-thumbnail.png"
+                        : projectId === "warehouse-ops-workbench"
+                        ? "/warehouse-ops-thumbnail.png"
                         : "/nocturne-thumbnail.png"
                     }
                     alt={`${project.title} ${isPaper ? 'Hero Visual' : 'Project Thumbnail'}`}
@@ -588,6 +766,60 @@ const ProjectDetail = () => {
               </div>
             </section>
 
+            {/* Demo video — Sabeel */}
+            {projectId === "sabeel" && (
+              <section>
+                <h2 className="text-3xl font-bold text-accent mb-6">Demo Video</h2>
+                <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-lg bg-black">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube.com/embed/g3kHPp7xfvA"
+                    title="Sabeel project demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+                <p className="mt-3 text-sm text-black/60">
+                  <a
+                    href="https://www.youtube.com/watch?v=g3kHPp7xfvA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent underline-offset-2 hover:underline"
+                  >
+                    Open on YouTube
+                  </a>
+                </p>
+              </section>
+            )}
+
+            {/* Demo video — InsighT */}
+            {projectId === "insight" && (
+              <section>
+                <h2 className="text-3xl font-bold text-accent mb-6">Demo Video</h2>
+                <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-lg bg-black">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube.com/embed/4c7uRVxoJfc"
+                    title="InsighT project demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+                <p className="mt-3 text-sm text-black/60">
+                  <a
+                    href="https://www.youtube.com/watch?v=4c7uRVxoJfc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent underline-offset-2 hover:underline"
+                  >
+                    Open on YouTube
+                  </a>
+                </p>
+              </section>
+            )}
+
             {/* Process Flow - Only for insight project */}
             {projectId === "insight" && 'workflowImage' in project && project.workflowImage && (
               <section>
@@ -660,6 +892,10 @@ const ProjectDetail = () => {
                       ? "We developed the MSA Website using HTML, CSS, and JavaScript to create a responsive and user-friendly platform. The website features clean, semantic HTML structure for accessibility, modern CSS for responsive design across all devices, and JavaScript for interactive functionality including event scheduling, donation processing, and membership registration systems."
                       : projectId === "insight"
                       ? "We developed InsighT with Next.js (App Router), React, and TypeScript for the frontend, using Tailwind CSS and Radix UI for styling. The backend uses Supabase (PostgreSQL) with Row Level Security for data management. We built a scalable ingestion pipeline that scrapes and processes signals from Reddit, outage trackers, and community forums. For geographic visualization, we integrated Leaflet with OpenStreetMap tiles and heatmap overlays. The AI layer uses Google Gemini 2.0 Flash to generate actionable opportunities with priority, urgency, and stakeholder recommendations. The entire system is deployed on Vercel with server-side rendering and edge-friendly API routes."
+                      : projectId === "sabeel"
+                      ? "We built Sabeel with Next.js (App Router), React 19, and TypeScript, styling the UI with Tailwind CSS v4. Supabase (@supabase/ssr and supabase-js) backs authentication-aware server rendering and Postgres storage for intake and service records. Leaflet and react-leaflet power map views for geographic context alongside routing logic in the application layer. The project is deployed on Vercel for a fast, shareable demo of the full intake-to-match workflow."
+                      : projectId === "warehouse-ops-workbench"
+                      ? "We implemented Warehouse Ops Workbench as a React 18 + Vite 5 SPA using JavaScript, the Supabase client for authentication, and Axios for REST calls to a Java 21 Spring Boot 3 API. Spring Security validates Supabase-issued JWTs; Spring Data JPA maps to a Postgres schema deployed on Supabase with versioned SQL migrations and seed data. The UI includes role-gated pages (reporting, review queue, ticket detail, dashboards, reports, master data, audit trail) with Recharts and react-hook-form. The frontend ships on Vercel while the API targets a Railway-style Java deployment with CORS and environment-driven configuration."
                       : "We developed Nocturne as a Chrome extension using HTML, CSS, and JavaScript with Chrome Extension APIs. The extension uses content scripts to inject CSS filters and theme rules into websites, a popup UI for theme selection, and the Chrome Storage API to persist user preferences across sessions. The architecture ensures lightweight performance while providing comprehensive theme customization across all websites."
                     }
                   </p>

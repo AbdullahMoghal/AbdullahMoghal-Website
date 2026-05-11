@@ -30,7 +30,7 @@ const Footer = () => {
                 <Linkedin size={24} />
               </a>
               <a 
-                href="mailto:amm0640@mavs.uta.edu"
+                href="mailto:abdullahisi3a@gmail.com"
                 className="p-3 bg-white/10 hover:bg-white text-white hover:text-black rounded-full transition-all hover:scale-110"
               >
                 <Mail size={24} />
@@ -40,7 +40,7 @@ const Footer = () => {
             {/* PDF Documents */}
             <div className="flex gap-4">
               <a 
-                href="/pdf-redirects/Resume-10-14-2025.pdf"
+                href="/pdf-redirects/_Abdullah-Resume-5-09-2026.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 hover:bg-white text-white hover:text-black rounded-full transition-all hover:scale-110"
@@ -49,7 +49,7 @@ const Footer = () => {
                 <FileText size={24} />
               </a>
               <a 
-                href="/pdf-redirects/Professional Refrence List.pdf"
+                href="/pdf-redirects/professional-reference-list.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 hover:bg-white text-white hover:text-black rounded-full transition-all hover:scale-110"

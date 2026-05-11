@@ -11,11 +11,27 @@ const projects = [
     featured: true
   },
   {
+    id: "sabeel",
+    title: "Sabeel",
+    description: "An automated refugee intake and service routing platform that matches people to the most relevant local support using real-world data on needs, language, and availability—including map-based discovery and a Supabase-backed workflow.",
+    image: "/sabeel-thumbnail.png",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Leaflet"],
+    featured: true
+  },
+  {
     id: "opportune-ai",
     title: "OpportuneAI",
     description: "AI-powered scholarship matching platform using Google Gemini AI to help college students find scholarships that actually fit them.",
     image: "/opportuneai-thumbnail.png",
     technologies: ["React", "TypeScript", "FastAPI", "Python", "Google Gemini AI"],
+    featured: true
+  },
+  {
+    id: "warehouse-ops-workbench",
+    title: "Warehouse Ops Workbench",
+    description: "INSY 4325 capstone: a full-stack warehouse operations platform to report, review, resolve, and audit inventory discrepancies in real time—with role-based workflows, dashboards, and immutable audit trails.",
+    image: "/warehouse-ops-thumbnail.png",
+    technologies: ["React", "Vite", "JavaScript", "Spring Boot", "Java", "Supabase", "PostgreSQL", "Recharts"],
     featured: true
   },
   {
@@ -50,6 +66,13 @@ const papers = [
     course: "Maverick Marketing Intelligence Competition 2025",
     description: "Calmē is a functional beverage concept designed for Gen Z, addressing the gap between hyperactive energy drinks and genuine wellness needs. Developed for the Maverick Marketing Intelligence Competition 2025, this project positions Calmē as a mindful alternative to traditional energy drinks, offering sustained focus without crashes. The research reveals that 77% of Gen Z consumes energy drinks, but 38% experience crashes and 18% report jitters—exposing a critical market opportunity for calm, sustained energy.",
     topics: ["Marketing Strategy", "Consumer Research", "Brand Innovation"]
+  },
+  {
+    id: "paper-3",
+    title: "Warehouse Ops Workbench: Final Capstone Report",
+    course: "INSY 4325: Information Systems Capstone",
+    description: "Final report for the Warehouse Ops Workbench capstone—a full-stack warehouse operations platform for reporting, tracking, and resolving inventory discrepancies in real time, with role-based workflows, dashboards, audit trails, and a Spring Boot + React + Supabase architecture documented end-to-end.",
+    topics: ["Systems Design", "Operations & Workflow", "Full-Stack Architecture"]
   }
 ];
 

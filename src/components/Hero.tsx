@@ -33,7 +33,7 @@ const Hero = () => {
             
             <p className="text-base md:text-lg text-accent font-semibold leading-tight">
               Bachelor of Science in Information Systems @ UT Arlington<br />
-              <span className="font-bold">August 2023 – May 2026</span>
+              <span className="font-bold">Graduated May 2026</span>
             </p>
             
             <p className="text-base md:text-lg text-black max-w-lg leading-relaxed">
